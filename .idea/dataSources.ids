@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Django default" uuid="f0020284-e122-47ad-8313-d9675fb47c56">
+    <database-info product="SQLite" version="3.8.9" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="auth_group" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(80)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="auth_group_permissions" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="group_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="permission_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_auth_group_permissions_1" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_auth_group_permissions_2" columns="group_id" ref-table="auth_group" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="auth_group_permissions_8373b171" unique="true" columns="permission_id"/>
+      <index name="auth_group_permissions_0e939a4f" unique="true" columns="group_id"/>
+    </table>
+    <table name="auth_permission" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="content_type_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="codename" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR(255)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_auth_permission_1" columns="content_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="auth_permission_417f1b1c" unique="true" columns="content_type_id"/>
+    </table>
+    <table name="django_admin_log" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="action_time" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="object_id" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="object_repr" sqlType="VARCHAR(200)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="action_flag" sqlType="SMALLINT UNSIGNED" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="change_message" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="content_type_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_django_admin_log_1" columns="user_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_django_admin_log_2" columns="content_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="django_admin_log_e8701ad4" unique="true" columns="user_id"/>
+      <index name="django_admin_log_417f1b1c" unique="true" columns="content_type_id"/>
+    </table>
+    <table name="django_content_type" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="app_label" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="model" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="django_migrations" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="app" sqlType="VARCHAR(255)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR(255)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="applied" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="django_session" schema="" catalog="" type="TABLE">
+      <column name="session_key" sqlType="VARCHAR(40)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="session_data" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="expire_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="session_key"/>
+      <index name="django_session_de54fa62" unique="true" columns="expire_date"/>
+    </table>
+    <table name="iasset_asset" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="asset_number" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="purchase_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="warranty_period" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="expire_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="cost" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="renewal_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="renewal_cost" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="total_cost" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="asset_admin" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="online_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="offline_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="qrcode" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="picture" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="model_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="sn" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_asset_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_asset_2" columns="model_id" ref-table="info_productmodel" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_asset_3" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iasset_asset_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="iasset_asset_477cbf8a" unique="true" columns="model_id"/>
+      <index name="iasset_asset_65fb0bdf" unique="true" columns="create_person_id"/>
+    </table>
+    <table name="iasset_asset_contract" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="asset_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="contract_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_asset_contract_1" columns="contract_id" ref-table="info_contract" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_asset_contract_2" columns="asset_id" ref-table="iasset_asset" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+    </table>
+    <table name="iasset_asset_parts" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="asset_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="parts_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_asset_parts_1" columns="parts_id" ref-table="iasset_parts" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_asset_parts_2" columns="asset_id" ref-table="iasset_asset" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+    </table>
+    <table name="iasset_blade" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="location" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="raid_type" sqlType="VARCHAR(512)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="cpu_count" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="cpu_model" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="memory" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="disk" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="slotNum" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="asset_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="cabinet_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="os_release_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="service_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="storage_used_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="bladecenter_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_blade_1" columns="bladecenter_id" ref-table="iasset_bladecenter" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_blade_2" columns="storage_used_id" ref-table="iasset_storagespace" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_blade_3" columns="service_id" ref-table="iservice_serviceinfo" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_blade_4" columns="os_release_id" ref-table="iasset_os" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_blade_5" columns="cabinet_id" ref-table="iasset_cabinet" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_blade_6" columns="asset_id" ref-table="iasset_asset" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iasset_blade_5654eaab" unique="true" columns="bladecenter_id"/>
+      <index name="iasset_blade_7e31ba61" unique="true" columns="storage_used_id"/>
+      <index name="iasset_blade_b0dc1e29" unique="true" columns="service_id"/>
+      <index name="iasset_blade_cd8f837f" unique="true" columns="os_release_id"/>
+      <index name="iasset_blade_684d1223" unique="true" columns="cabinet_id"/>
+    </table>
+    <table name="iasset_bladecenter" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="location" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="raid_type" sqlType="VARCHAR(512)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="cpu_count" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="cpu_model" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="memory" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="disk" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="slotSum" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="asset_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="cabinet_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="os_release_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="service_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="storage_used_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_bladecenter_1" columns="storage_used_id" ref-table="iasset_storagespace" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_bladecenter_2" columns="service_id" ref-table="iservice_serviceinfo" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_bladecenter_3" columns="os_release_id" ref-table="iasset_os" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_bladecenter_4" columns="cabinet_id" ref-table="iasset_cabinet" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_bladecenter_5" columns="asset_id" ref-table="iasset_asset" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iasset_bladecenter_7e31ba61" unique="true" columns="storage_used_id"/>
+      <index name="iasset_bladecenter_b0dc1e29" unique="true" columns="service_id"/>
+      <index name="iasset_bladecenter_cd8f837f" unique="true" columns="os_release_id"/>
+      <index name="iasset_bladecenter_684d1223" unique="true" columns="cabinet_id"/>
+    </table>
+    <table name="iasset_cabinet" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(256)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="location" sqlType="VARCHAR(256)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="layer" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="specifications" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR(16)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="idc_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_cabinet_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_cabinet_2" columns="idc_id" ref-table="iasset_idc" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_cabinet_3" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iasset_cabinet_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="iasset_cabinet_0869e37a" unique="true" columns="idc_id"/>
+      <index name="iasset_cabinet_65fb0bdf" unique="true" columns="create_person_id"/>
+    </table>
+    <table name="iasset_idc" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="address" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR(16)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="isself" sqlType="VARCHAR(16)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="cost" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="start_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="end_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="contact_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_idc_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_idc_2" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_idc_3" columns="contact_id" ref-table="info_contacts" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iasset_idc_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="iasset_idc_65fb0bdf" unique="true" columns="create_person_id"/>
+      <index name="iasset_idc_6d82f13d" unique="true" columns="contact_id"/>
+    </table>
+    <table name="iasset_idc_contract" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="idc_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="contract_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_idc_contract_1" columns="contract_id" ref-table="info_contract" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_idc_contract_2" columns="idc_id" ref-table="iasset_idc" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+    </table>
+    <table name="iasset_network" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="location" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="raid_type" sqlType="VARCHAR(512)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="cpu_count" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="cpu_model" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="memory" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="disk" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="asset_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="cabinet_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="os_release_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="service_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="storage_used_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_network_1" columns="storage_used_id" ref-table="iasset_storagespace" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_network_2" columns="service_id" ref-table="iservice_serviceinfo" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_network_3" columns="os_release_id" ref-table="iasset_os" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_network_4" columns="cabinet_id" ref-table="iasset_cabinet" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_network_5" columns="asset_id" ref-table="iasset_asset" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iasset_network_7e31ba61" unique="true" columns="storage_used_id"/>
+      <index name="iasset_network_b0dc1e29" unique="true" columns="service_id"/>
+      <index name="iasset_network_cd8f837f" unique="true" columns="os_release_id"/>
+      <index name="iasset_network_684d1223" unique="true" columns="cabinet_id"/>
+    </table>
+    <table name="iasset_os" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="version" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="os_type" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="soft_license" sqlType="VARCHAR(256)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_os_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_os_2" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iasset_os_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="iasset_os_65fb0bdf" unique="true" columns="create_person_id"/>
+    </table>
+    <table name="iasset_others" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="location" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="raid_type" sqlType="VARCHAR(512)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="cpu_count" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="cpu_model" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="memory" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="disk" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="asset_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="cabinet_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="os_release_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="service_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="storage_used_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_others_1" columns="storage_used_id" ref-table="iasset_storagespace" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_others_2" columns="service_id" ref-table="iservice_serviceinfo" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_others_3" columns="os_release_id" ref-table="iasset_os" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_others_4" columns="cabinet_id" ref-table="iasset_cabinet" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_others_5" columns="asset_id" ref-table="iasset_asset" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iasset_others_7e31ba61" unique="true" columns="storage_used_id"/>
+      <index name="iasset_others_b0dc1e29" unique="true" columns="service_id"/>
+      <index name="iasset_others_cd8f837f" unique="true" columns="os_release_id"/>
+      <index name="iasset_others_684d1223" unique="true" columns="cabinet_id"/>
+    </table>
+    <table name="iasset_parts" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="parts_type" sqlType="VARCHAR(32)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="unit_price" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="used" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="rest" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="specifications" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="asset_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_parts_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_parts_2" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_parts_3" columns="asset_id" ref-table="iasset_asset" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iasset_parts_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="iasset_parts_65fb0bdf" unique="true" columns="create_person_id"/>
+    </table>
+    <table name="iasset_rent" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="from_or_to" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="receiver" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="receiver_phone" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="receiver_company" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="handler" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="handler_phone" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="handler_company" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="rent_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="rent_period" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="returned_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="returned_status" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="usage" sqlType="VARCHAR(256)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="rent_cost" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="asset_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_rent_1" columns="asset_id" ref-table="iasset_asset" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iasset_rent_51c6d5db" unique="true" columns="asset_id"/>
+    </table>
+    <table name="iasset_security" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="location" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="raid_type" sqlType="VARCHAR(512)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="cpu_count" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="cpu_model" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="memory" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="disk" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="asset_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="cabinet_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="os_release_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="service_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="storage_used_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_security_1" columns="storage_used_id" ref-table="iasset_storagespace" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_security_2" columns="service_id" ref-table="iservice_serviceinfo" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_security_3" columns="os_release_id" ref-table="iasset_os" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_security_4" columns="cabinet_id" ref-table="iasset_cabinet" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_security_5" columns="asset_id" ref-table="iasset_asset" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iasset_security_7e31ba61" unique="true" columns="storage_used_id"/>
+      <index name="iasset_security_b0dc1e29" unique="true" columns="service_id"/>
+      <index name="iasset_security_cd8f837f" unique="true" columns="os_release_id"/>
+      <index name="iasset_security_684d1223" unique="true" columns="cabinet_id"/>
+    </table>
+    <table name="iasset_server" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="location" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="raid_type" sqlType="VARCHAR(512)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="cpu_count" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="cpu_model" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="memory" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="disk" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="asset_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="cabinet_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="os_release_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="service_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="storage_used_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_server_1" columns="storage_used_id" ref-table="iasset_storagespace" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_server_2" columns="service_id" ref-table="iservice_serviceinfo" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_server_3" columns="os_release_id" ref-table="iasset_os" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_server_4" columns="cabinet_id" ref-table="iasset_cabinet" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_server_5" columns="asset_id" ref-table="iasset_asset" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iasset_server_7e31ba61" unique="true" columns="storage_used_id"/>
+      <index name="iasset_server_b0dc1e29" unique="true" columns="service_id"/>
+      <index name="iasset_server_cd8f837f" unique="true" columns="os_release_id"/>
+      <index name="iasset_server_684d1223" unique="true" columns="cabinet_id"/>
+    </table>
+    <table name="iasset_storage" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="location" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="raid_type" sqlType="VARCHAR(512)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="cpu_count" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="cpu_model" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="memory" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="disk" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="total_storage" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="asset_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="cabinet_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="os_release_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="service_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="storage_used_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_storage_1" columns="storage_used_id" ref-table="iasset_storagespace" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_storage_2" columns="service_id" ref-table="iservice_serviceinfo" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_storage_3" columns="os_release_id" ref-table="iasset_os" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_storage_4" columns="cabinet_id" ref-table="iasset_cabinet" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_storage_5" columns="asset_id" ref-table="iasset_asset" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iasset_storage_7e31ba61" unique="true" columns="storage_used_id"/>
+      <index name="iasset_storage_b0dc1e29" unique="true" columns="service_id"/>
+      <index name="iasset_storage_cd8f837f" unique="true" columns="os_release_id"/>
+      <index name="iasset_storage_684d1223" unique="true" columns="cabinet_id"/>
+    </table>
+    <table name="iasset_storagespace" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="volume" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="host_on_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_storagespace_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_storagespace_2" columns="host_on_id" ref-table="iasset_storage" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_storagespace_3" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iasset_storagespace_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="iasset_storagespace_c23761eb" unique="true" columns="host_on_id"/>
+      <index name="iasset_storagespace_65fb0bdf" unique="true" columns="create_person_id"/>
+    </table>
+    <table name="iasset_tape" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="location" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="raid_type" sqlType="VARCHAR(512)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="cpu_count" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="cpu_model" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="memory" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="disk" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="total" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="used" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="specification" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="asset_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="cabinet_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="os_release_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="service_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="storage_used_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_tape_1" columns="storage_used_id" ref-table="iasset_storagespace" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_tape_2" columns="service_id" ref-table="iservice_serviceinfo" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_tape_3" columns="os_release_id" ref-table="iasset_os" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_tape_4" columns="cabinet_id" ref-table="iasset_cabinet" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_tape_5" columns="asset_id" ref-table="iasset_asset" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iasset_tape_7e31ba61" unique="true" columns="storage_used_id"/>
+      <index name="iasset_tape_b0dc1e29" unique="true" columns="service_id"/>
+      <index name="iasset_tape_cd8f837f" unique="true" columns="os_release_id"/>
+      <index name="iasset_tape_684d1223" unique="true" columns="cabinet_id"/>
+    </table>
+    <table name="iasset_vm" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="location" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="raid_type" sqlType="VARCHAR(512)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="cpu_count" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="cpu_model" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="memory" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="disk" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="asset_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="cabinet_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="host_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="os_release_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="service_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="storage_used_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iasset_vm_1" columns="storage_used_id" ref-table="iasset_storagespace" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_vm_2" columns="service_id" ref-table="iservice_serviceinfo" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_vm_3" columns="os_release_id" ref-table="iasset_os" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_vm_4" columns="host_id" ref-table="iasset_asset" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_vm_5" columns="cabinet_id" ref-table="iasset_cabinet" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iasset_vm_6" columns="asset_id" ref-table="iasset_asset" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iasset_vm_7e31ba61" unique="true" columns="storage_used_id"/>
+      <index name="iasset_vm_b0dc1e29" unique="true" columns="service_id"/>
+      <index name="iasset_vm_cd8f837f" unique="true" columns="os_release_id"/>
+      <index name="iasset_vm_8396f175" unique="true" columns="host_id"/>
+      <index name="iasset_vm_684d1223" unique="true" columns="cabinet_id"/>
+    </table>
+    <table name="ilog_eventlog" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="eventtype" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="target" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="remote_ip" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="detail" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_ilog_eventlog_1" columns="user_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="ilog_eventlog_e8701ad4" unique="true" columns="user_id"/>
+    </table>
+    <table name="inetwork_ipaddress" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="ipaddress" sqlType="CHAR(39)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="user" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="segment_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="service_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_inetwork_ipaddress_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_inetwork_ipaddress_2" columns="service_id" ref-table="iservice_serviceinfo" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_inetwork_ipaddress_3" columns="segment_id" ref-table="inetwork_segment" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_inetwork_ipaddress_4" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="inetwork_ipaddress_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="inetwork_ipaddress_b0dc1e29" unique="true" columns="service_id"/>
+      <index name="inetwork_ipaddress_3e8e3332" unique="true" columns="segment_id"/>
+      <index name="inetwork_ipaddress_65fb0bdf" unique="true" columns="create_person_id"/>
+    </table>
+    <table name="inetwork_link" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="isp" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="bandwidth" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="link_type" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="cost" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="start_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="end_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="contract_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="from_idc_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="to_idc_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_inetwork_link_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_inetwork_link_2" columns="to_idc_id" ref-table="iasset_idc" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_inetwork_link_3" columns="from_idc_id" ref-table="iasset_idc" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_inetwork_link_4" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_inetwork_link_5" columns="contract_id" ref-table="info_contract" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="inetwork_link_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="inetwork_link_3ba8380d" unique="true" columns="to_idc_id"/>
+      <index name="inetwork_link_bc2a8149" unique="true" columns="from_idc_id"/>
+      <index name="inetwork_link_65fb0bdf" unique="true" columns="create_person_id"/>
+      <index name="inetwork_link_567128e5" unique="true" columns="contract_id"/>
+    </table>
+    <table name="inetwork_ports" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="port_num" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR(256)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="rate" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="port_type" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="connection_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="host_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="ip_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_inetwork_ports_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_inetwork_ports_2" columns="ip_id" ref-table="inetwork_ipaddress" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_inetwork_ports_3" columns="host_id" ref-table="iasset_asset" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_inetwork_ports_4" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_inetwork_ports_5" columns="connection_id" ref-table="inetwork_ports" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="inetwork_ports_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="inetwork_ports_41ba5632" unique="true" columns="ip_id"/>
+      <index name="inetwork_ports_8396f175" unique="true" columns="host_id"/>
+      <index name="inetwork_ports_65fb0bdf" unique="true" columns="create_person_id"/>
+      <index name="inetwork_ports_289b4878" unique="true" columns="connection_id"/>
+    </table>
+    <table name="inetwork_segment" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="ip_version" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="address" sqlType="CHAR(39)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="mask" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="usage" sqlType="VARCHAR(256)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="used_num" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="unused_num" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_inetwork_segment_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_inetwork_segment_2" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="inetwork_segment_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="inetwork_segment_65fb0bdf" unique="true" columns="create_person_id"/>
+    </table>
+    <table name="info_company" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="address" sqlType="VARCHAR(256)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_info_company_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_info_company_2" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="info_company_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="info_company_65fb0bdf" unique="true" columns="create_person_id"/>
+    </table>
+    <table name="info_contacts" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="phone_number" sqlType="VARCHAR(30)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR(254)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="position" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="company_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_info_contacts_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_info_contacts_2" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_info_contacts_3" columns="company_id" ref-table="info_company" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="info_contacts_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="info_contacts_65fb0bdf" unique="true" columns="create_person_id"/>
+      <index name="info_contacts_447d3092" unique="true" columns="company_id"/>
+    </table>
+    <table name="info_contract" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="sn" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="cost" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="start_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="end_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="pdf" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="company_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="project_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_info_contract_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_info_contract_2" columns="project_id" ref-table="info_project" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_info_contract_3" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_info_contract_4" columns="company_id" ref-table="info_company" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="info_contract_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="info_contract_b098ad43" unique="true" columns="project_id"/>
+      <index name="info_contract_65fb0bdf" unique="true" columns="create_person_id"/>
+      <index name="info_contract_447d3092" unique="true" columns="company_id"/>
+    </table>
+    <table name="info_deviceofcontract" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="cpu_count" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="cpu_model" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="ram" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="disk" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="price" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="quantity" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="contract_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="model_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_info_deviceofcontract_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_info_deviceofcontract_2" columns="model_id" ref-table="info_productmodel" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_info_deviceofcontract_3" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_info_deviceofcontract_4" columns="contract_id" ref-table="info_contract" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="info_deviceofcontract_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="info_deviceofcontract_477cbf8a" unique="true" columns="model_id"/>
+      <index name="info_deviceofcontract_65fb0bdf" unique="true" columns="create_person_id"/>
+      <index name="info_deviceofcontract_567128e5" unique="true" columns="contract_id"/>
+    </table>
+    <table name="info_productmodel" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(256)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="height" sqlType="SMALLINT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="asset_type" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="power" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="manufactory_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_info_productmodel_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_info_productmodel_2" columns="manufactory_id" ref-table="info_company" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_info_productmodel_3" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="info_productmodel_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="info_productmodel_69f839cb" unique="true" columns="manufactory_id"/>
+      <index name="info_productmodel_65fb0bdf" unique="true" columns="create_person_id"/>
+    </table>
+    <table name="info_project" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_info_project_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_info_project_2" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="info_project_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="info_project_65fb0bdf" unique="true" columns="create_person_id"/>
+    </table>
+    <table name="iservice_serviceinfo" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="type" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="level" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="contact" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="online_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="offline_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="create_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="department_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="parent_service_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="update_person_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iservice_serviceinfo_1" columns="update_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iservice_serviceinfo_2" columns="parent_service_id" ref-table="iservice_serviceinfo" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iservice_serviceinfo_3" columns="department_id" ref-table="iuser_departments" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iservice_serviceinfo_4" columns="create_person_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iservice_serviceinfo_8d34a8fd" unique="true" columns="update_person_id"/>
+      <index name="iservice_serviceinfo_0ca32cc5" unique="true" columns="parent_service_id"/>
+      <index name="iservice_serviceinfo_bf691be4" unique="true" columns="department_id"/>
+      <index name="iservice_serviceinfo_65fb0bdf" unique="true" columns="create_person_id"/>
+    </table>
+    <table name="iservice_serviceinfo_contract" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="serviceinfo_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="contract_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iservice_serviceinfo_contract_1" columns="contract_id" ref-table="info_contract" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iservice_serviceinfo_contract_2" columns="serviceinfo_id" ref-table="iservice_serviceinfo" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iservice_serviceinfo_contract_567128e5" unique="true" columns="contract_id"/>
+      <index name="iservice_serviceinfo_contract_df3d97bf" unique="true" columns="serviceinfo_id"/>
+    </table>
+    <table name="istatistic_departmentcost" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="service_cost" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="device_used" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="renewal_cost" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="repair_parts_cost" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="channel_cost" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="device_depreciation" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="storage_cost" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="node_constructed" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="total_cost" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="statistic_time" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="createDate" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="department_name_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_istatistic_departmentcost_1" columns="department_name_id" ref-table="iuser_departments" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="istatistic_departmentcost_889a282f" unique="true" columns="department_name_id"/>
+    </table>
+    <table name="istatistic_servicecost" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="service_cost" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="device_used" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="renewal_cost" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="repair_parts_cost" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="channel_cost" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="device_depreciation" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="storage_cost" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="node_constructed" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="total_cost" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="statistic_time" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="createDate" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="department_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="service_name_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_istatistic_servicecost_1" columns="service_name_id" ref-table="iservice_serviceinfo" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_istatistic_servicecost_2" columns="department_id" ref-table="iuser_departments" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="istatistic_servicecost_e9f5634e" unique="true" columns="service_name_id"/>
+      <index name="istatistic_servicecost_bf691be4" unique="true" columns="department_id"/>
+    </table>
+    <table name="iuser_departments" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="iuser_user" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="password" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="last_login" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="is_superuser" sqlType="BOOL" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="username" sqlType="VARCHAR(30)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="first_name" sqlType="VARCHAR(30)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="last_name" sqlType="VARCHAR(30)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR(254)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="is_staff" sqlType="BOOL" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="is_active" sqlType="BOOL" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="date_joined" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR(80)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="role" sqlType="VARCHAR(2)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="department_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iuser_user_1" columns="department_id" ref-table="iuser_departments" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iuser_user_bf691be4" unique="true" columns="department_id"/>
+    </table>
+    <table name="iuser_user_group" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="usergroup_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iuser_user_group_1" columns="usergroup_id" ref-table="iuser_usergroup" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iuser_user_group_2" columns="user_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iuser_user_group_50ce08ac" unique="true" columns="usergroup_id"/>
+      <index name="iuser_user_group_e8701ad4" unique="true" columns="user_id"/>
+    </table>
+    <table name="iuser_user_groups" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="group_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iuser_user_groups_1" columns="group_id" ref-table="auth_group" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iuser_user_groups_2" columns="user_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iuser_user_groups_0e939a4f" unique="true" columns="group_id"/>
+      <index name="iuser_user_groups_e8701ad4" unique="true" columns="user_id"/>
+    </table>
+    <table name="iuser_user_user_permissions" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="permission_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_iuser_user_user_permissions_1" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_iuser_user_user_permissions_2" columns="user_id" ref-table="iuser_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="iuser_user_user_permissions_8373b171" unique="true" columns="permission_id"/>
+      <index name="iuser_user_user_permissions_e8701ad4" unique="true" columns="user_id"/>
+    </table>
+    <table name="iuser_usergroup" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(80)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="create_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="update_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="memo" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
+      <column name="name" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="seq" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+    </table>
+  </data-source>
+</component>
